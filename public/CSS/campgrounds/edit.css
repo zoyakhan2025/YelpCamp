@@ -1,0 +1,47 @@
+.wid {
+	width: 30%;
+	margin: 0 auto;
+}
+
+.input-group{
+   margin: 0 auto;
+   width: 30%
+}
+
+#anchor {
+	width: 30%;
+	margin: 0 auto;
+}
+
+h2 {
+	margin-bottom: 20px;
+	margin-top: 80px
+}
+
+#GoBack {
+	cursor: pointer;
+	color: #0384fc
+}
+
+.btn-success {
+	background: #99dca0;
+	border: #99dca0;
+	color: black;
+	width: 100%
+}
+
+#error1, #error2, #error3, #error4 {
+	color: red;
+	text-align: justify;
+    text-justify: inter-word;
+}
+
+#counter_campground {
+	font-size: 12px;
+	float: right;
+	margin-bottom: 10px;
+	margin-top: 4px;
+	text-align: right;
+	border-style: none;
+	width: 60px
+}

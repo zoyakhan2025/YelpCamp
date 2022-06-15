@@ -1,0 +1,37 @@
+<!-- header partial -->
+<%- include("../partials/header",{
+	file: "comments/edit"
+}) %>
+
+
+<!-- navbar partial -->
+<%- include("../partials/navbar") %>
+
+
+<!-- some middle headings -->
+<h2 class="text-center">Edit Comment</h2>
+
+
+<!-- form -->
+<form action="/campgrounds/<%=campground._id%>/comments/<%=comment._id%>?_method=PUT" 
+	  method="POST" novalidate class="needs-validation">
+  <div class="mb-3 wid">
+    <textarea class="form-control" name="comment[text]" placeholder="Comment" id="text" maxlength="500"           autocomplete="off" required><%=comment.text%></textarea>
+	<input type="text" id="counter_comment" readonly>
+	<div id="error1"></div>
+  </div>
+  <div class="mb-3 wid">
+	<button type="submit" class="btn btn-success">Update</button>
+  </div>
+</form>
+<div id="anchor">
+	<a id="GoBack" onclick="history.back(-1)">Go Back</a>
+</div>
+
+<!-- form_validation partial -->
+<%- include("../partials/form_validation_comment") %>
+
+<!-- footer partial -->
+<%- include("../partials/footer",{
+	file: "comments/app"
+}) %>

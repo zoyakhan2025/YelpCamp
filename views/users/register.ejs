@@ -1,0 +1,41 @@
+<!-- header partial -->
+<%- include("../partials/header",{
+	file: "users/register"
+}) %>
+
+
+<!-- navbar partial -->
+<%- include("../partials/navbar") %>
+
+<!-- some middle headings -->
+<h1 class="text-center">Sign Up!</h1>
+
+
+<!-- form -->
+<form action="/register" method="POST" novalidate class="needs-validation">
+  <div class="mb-3 wid">
+    <input type="text" class="form-control" placeholder="Username" name="username" id="username"                 minlength="3" maxlength="16" pattern="[a-zA-Z0-9_]*" autocomplete="off" required>
+	<div id="error1"></div>
+  </div>
+  <div class="mb-3 wid">
+    <input type="email" class="form-control" placeholder="Email" name="email" id="email"                         pattern=".*@hotmail.com|.*@outlook.com|.*@gmail.com|.*@yahoo.com" autocomplete="on" required>
+	<div id="error2"></div>
+	<div id="domains"></div>
+  </div>
+  <div class="mb-3 wid">
+    <input type="password" class="form-control" placeholder="Password" name="password" id="password"             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" autocomplete="on" required>
+	<!--this pattern "(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" restricts user to type password that contain 6 or more characters that are of at least one number, and one uppercase and lowercase letter-->
+	<div id="error3"></div>
+  </div>
+  <div class="mb-3 wid">
+	<button type="submit" class="btn btn-primary">Sign Up</button>
+  </div>
+</form>
+
+<!-- form_validation partial -->
+<%- include("../partials/form_validation_user") %>
+
+<!-- footer partial -->
+<%- include("../partials/footer",{
+	file: "users/app"
+}) %>

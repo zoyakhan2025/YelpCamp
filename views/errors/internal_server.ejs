@@ -1,0 +1,21 @@
+<!-- header partial -->
+<%- include("../partials/header",{
+	file: "errors/internal_server"
+}) %>
+
+
+<!-- navbar partial -->
+<%- include("../partials/navbar") %>
+
+
+<h3>YelpCamp</h3>
+<p><span>Sorry, something went wrong.</span></p>
+<p>We're working on it and we'll get it fixed as soon as we can.</p>
+<i class="fa-solid fa-computer"></i>
+<a class="new" onclick="history.back(-1)">Go back to the previous page</a>
+<a class="new" href="/campgrounds">Go to Campgrounds</a>
+
+<!-- footer partial -->
+<%- include("../partials/footer",{
+	file: "errors/internal_server"
+}) %>

@@ -1,0 +1,18 @@
+.wid {
+	width: 30%;
+	margin: 0 auto;
+}
+
+h1 {
+	margin-top: 140px
+}
+
+button[type="submit"] {
+	width: 100%
+}
+
+#error1, #error3 {
+	color: red;
+	text-align: justify;
+    text-justify: inter-word;
+}

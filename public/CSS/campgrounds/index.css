@@ -1,0 +1,69 @@
+img.img-fluid{
+	height: 200px;
+	width: 100%;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.thumb {
+	padding: 0;
+	border: 0;
+	border: 1px solid #969D9C;
+	border-radius: 10px;
+	margin-bottom: 20px
+} 
+
+h4 {
+	font-size: 18px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-transform: capitalize /*this capitalizes first letter of every word*/
+}
+
+#space {
+	margin-bottom: 10px
+}
+
+i {
+	display: inline;
+	font-size: 60px
+}
+
+h1{
+	display: inline
+}
+
+p{
+	margin-top: 13px
+}
+
+.jumbotron {
+  padding: 3rem 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background-color: #e9ecef;
+  border-radius: .3rem;
+}
+
+#no_camp {
+	font-size: 30px;
+	margin-top: 80px;
+	color: grey;
+}
+
+#hide {
+	display: none
+}
+
+header a {
+	width: 195px
+}
+
+form {
+	width: 268px;
+	margin-top: 15px
+}
+
+
+
+

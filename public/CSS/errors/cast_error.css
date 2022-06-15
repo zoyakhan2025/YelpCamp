@@ -1,0 +1,32 @@
+h3{
+	margin-top: 50px;
+	margin-bottom: 40px;
+	text-align: center;
+	font-weight: bold
+}
+
+p span{
+	font-weight: bold;
+	font-size: 16px
+}
+
+p {
+	text-align: center;
+	font-size: 16px
+}
+
+.fa, .fa-brands, .fa-duotone, .fa-light, .fa-regular, .fa-solid, .fa-thin, .fab, .fad, .fal, .far, .fas, .fat {
+	display: block;
+	text-align: center;
+	font-size: 200px;
+	color: #eb090e
+}
+
+.new{
+	text-align: center;
+	display: block;
+	margin-top: 10px;
+	cursor: pointer;
+	color: #0384fc;
+	text-decoration: none
+}

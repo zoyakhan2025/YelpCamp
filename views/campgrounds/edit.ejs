@@ -1,0 +1,52 @@
+<!-- header partial -->
+<%- include("../partials/header",{
+	file: "campgrounds/edit"
+}) %>
+
+
+<!-- navbar partial -->
+<%- include("../partials/navbar") %>
+
+
+<!-- some middle headings -->
+<h2 class="text-center">Edit <%=campground.name%></h2>
+
+
+<!-- form -->
+<form action="/campgrounds/<%=campground._id%>?_method=PUT" method="POST" novalidate class="needs-validation">
+  <div class="mb-3 wid">
+    <input class="form-control" type="text" name="name" value="<%=campground.name%>" id="name"                   placeholder="Name" pattern = "[a-zA-Z0-9][a-zA-Z0-9'\s]*" maxlength="18" autocomplete="off" required>
+	<div id="error1"></div>
+  </div>
+  <div class="mb-3 wid">
+    <input class="form-control" type="url" name="image" value="<%=campground.image%>" placeholder="Image URL"     id="image" pattern="https://.*" autocomplete="off" required>
+	<div id="error2"></div>
+  </div>
+  <div class="mb-3">
+	<div class="input-group">
+  		<span class="input-group-text">$</span>
+  		<input type="text" class="form-control" name="price" value="<%=campground.price%>" id="price"
+	    placeholder="Price Per Night" pattern="[1-9][0-9]{0,1}" autocomplete="off" required>
+	</div>
+	<div class="wid" id="error3"></div>
+  </div>
+  <div class="mb-3 wid">
+    <textarea class="form-control" name="description" placeholder="Description" id="desc" maxlength="1500"       autocomplete="off" required><%=campground.description%></textarea>
+	<input type="text" id="counter_campground" readonly>
+	<div id="error4"></div>
+  </div>
+  <div class="mb-3 wid">
+	<button type="submit" class="btn btn-success">Update Campground</button>
+  </div>
+</form>
+<div id="anchor">
+	<a id="GoBack" onclick="history.back(-1)">Go Back</a>
+</div>
+
+<!-- form_validation partial -->
+<%- include("../partials/form_validation_campground") %>
+
+<!-- footer partial -->
+<%- include("../partials/footer",{
+	file: "campgrounds/app"
+}) %>

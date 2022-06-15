@@ -1,0 +1,21 @@
+<!-- header partial -->
+<%- include("../partials/header",{
+	file: "errors/cast_error"
+}) %>
+
+
+<!-- navbar partial -->
+<%- include("../partials/navbar") %>
+
+
+<h3>YelpCamp</h3>
+<p><span>400.</span>That's an error.</p>
+<p>Your client has issued a malformed or illegal request.</p>
+<i class="fa-solid fa-triangle-exclamation"></i>
+<a class="new" onclick="history.back(-1)">Go back to the previous page</a>
+<a class="new" href="/campgrounds">Go to Campgrounds</a>
+
+<!-- footer partial -->
+<%- include("../partials/footer",{
+	file: "errors/cast_error"
+}) %>

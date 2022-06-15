@@ -1,0 +1,81 @@
+<!-- header partial -->
+<%- include("../partials/header",{
+	file: "campgrounds/show"
+}) %>
+
+
+<!-- navbar partial -->
+<%- include("../partials/navbar") %>
+
+<div class="container">
+	
+	<div class="row">
+		
+		<div class="col-3">
+			<h3 id="top">YelpCamp</h3>
+			<div class="list-group">
+  				<a href="#" class="list-group-item active">Info</a>
+			</div>
+		</div>
+		
+		<div class="col-9">
+
+			<div class="thumb">
+				<img src="<%=campground.image%>" class="img-fluid">
+				<div class="caption">
+					<h4 id="inline"><strong><%=campground.name%></strong></h4>
+					<span id="old"><strong>$<%=campground.price%>/night</strong></span>
+					<p id="pad"><%=campground.description%></p>
+					<p id="pad2"><em>Submitted by <%=campground.author.username%>,
+					<%=moment(campground.created).fromNow()%></em></p>
+					<%if(currentUser && campground.author._id.equals(currentUser._id)) { %>
+						<a class="btn btn-warning btn-sm resize"  
+						href="/campgrounds/<%=campground._id%>/edit">
+						Edit</a>
+						<form id="small" action="/campgrounds/<%=campground._id%>?_method=DELETE" method="POST">
+							<button class="btn btn-danger btn-sm resize">Delete</button>
+						</form>
+					<% } %>
+				</div>
+			</div>
+			
+			<div class="thumb">
+				<a class="btn btn-success pull-right"                                                                            href="/campgrounds/<%=campground._id%>/comments/new">Add New Comment
+				</a>
+				<hr>
+				<% campground.comments.forEach(function(comment){ %>
+				<div id="container">
+					<dl>
+						<dt><%= comment.author.username %>
+							<span id="new"><%=moment(comment.created).fromNow()%></span>
+						</dt>
+						<dd> <%= comment.text %></dd>
+						<%if(currentUser && comment.author._id.equals(currentUser._id)) { %>
+							<a id="smEdit"    
+						   	   href="/campgrounds/<%=campground._id%>/comments/<%=comment._id%>/edit">
+						   	   Edit
+							</a>
+							<span>.</span>
+							<form id="small2"
+							  	  action="/campgrounds/<%=campground._id%>/comments/<%=comment._id%>?_method=DELETE" 
+							      method="POST">
+								  <button id="smEdit2" class="btn btn-link btn-outline-light">Delete</button>
+							</form>
+						<% } %>
+					</dl>
+					<% }) %>
+				</div>
+			</div>
+			
+			
+		</div>
+		
+	</div>
+	
+</div>
+
+
+<!-- footer partial -->
+<%- include("../partials/footer",{
+	file: "campgrounds/app"
+}) %>
